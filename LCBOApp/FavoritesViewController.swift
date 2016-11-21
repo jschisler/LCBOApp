@@ -1,6 +1,6 @@
 //
 //  FavoritesViewController.swift
-//  MasterDetailTest
+//  FavoritesViewController
 //
 //  Created by John Schisler on 2016-11-21.
 //  Copyright © 2016 John Schisler. All rights reserved.
@@ -25,10 +25,9 @@ class FavoritesViewController: UITableViewController, NSFetchedResultsController
     
     func insertNewObject(_ sender: Any) {
         let context = self.fetchedResultsController.managedObjectContext
-        let newEvent = Event(context: context)
+        let newProduct = ProductEntity(context: context)
         
         // If appropriate, configure the new managed object.
-        newEvent.timestamp = NSDate()
         
         // Save the context.
         do {
@@ -48,7 +47,7 @@ class FavoritesViewController: UITableViewController, NSFetchedResultsController
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let object = self.fetchedResultsController.object(at: indexPath)
                 let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
-//                controller.detailItem = object
+                //controller.detailItem = object
             }
         }
     }
@@ -66,14 +65,14 @@ class FavoritesViewController: UITableViewController, NSFetchedResultsController
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        let event = self.fetchedResultsController.object(at: indexPath)
-        self.configureCell(cell, withEvent: event)
+        let product = self.fetchedResultsController.object(at: indexPath)
+        self.configureCell(cell, withProduct: product)
         return cell
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
-        return true
+        return false
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
@@ -92,24 +91,24 @@ class FavoritesViewController: UITableViewController, NSFetchedResultsController
         }
     }
     
-    func configureCell(_ cell: UITableViewCell, withEvent event: Event) {
-        cell.textLabel!.text = event.timestamp!.description
+    func configureCell(_ cell: UITableViewCell, withProduct product: ProductEntity) {
+//        cell.textLabel!.text = event.timestamp!.description
     }
     
     // MARK: - Fetched results controller
     
-    var fetchedResultsController: NSFetchedResultsController<Event> {
+    var fetchedResultsController: NSFetchedResultsController<ProductEntity> {
         if _fetchedResultsController != nil {
             return _fetchedResultsController!
         }
         
-        let fetchRequest: NSFetchRequest<Event> = Event.fetchRequest()
+        let fetchRequest: NSFetchRequest<ProductEntity> = ProductEntity.fetchRequest()
         
         // Set the batch size to a suitable number.
         fetchRequest.fetchBatchSize = 20
         
         // Edit the sort key as appropriate.
-        let sortDescriptor = NSSortDescriptor(key: "timestamp", ascending: false)
+        let sortDescriptor = NSSortDescriptor(key: "name", ascending: false)
         
         fetchRequest.sortDescriptors = [sortDescriptor]
         
@@ -130,7 +129,7 @@ class FavoritesViewController: UITableViewController, NSFetchedResultsController
         
         return _fetchedResultsController!
     }
-    var _fetchedResultsController: NSFetchedResultsController<Event>? = nil
+    var _fetchedResultsController: NSFetchedResultsController<ProductEntity>? = nil
     
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         self.tableView.beginUpdates()
@@ -154,7 +153,7 @@ class FavoritesViewController: UITableViewController, NSFetchedResultsController
         case .delete:
             tableView.deleteRows(at: [indexPath!], with: .fade)
         case .update:
-            self.configureCell(tableView.cellForRow(at: indexPath!)!, withEvent: anObject as! Event)
+            self.configureCell(tableView.cellForRow(at: indexPath!)!, withProduct: anObject as! ProductEntity)
         case .move:
             tableView.moveRow(at: indexPath!, to: newIndexPath!)
         }

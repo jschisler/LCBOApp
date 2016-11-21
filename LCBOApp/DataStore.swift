@@ -42,6 +42,8 @@ class DataStore
         return container
     }()
     
+    
+    
     public var viewContext: NSManagedObjectContext {
         get {
             return persistentContainer.viewContext;
@@ -61,6 +63,4 @@ class DataStore
             }
         }
     }
-    
-    
 }
