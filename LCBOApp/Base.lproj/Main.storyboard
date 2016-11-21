@@ -39,13 +39,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eMZ-2k-djF" userLabel="Product Image View">
-                                <rect key="frame" x="0.0" y="28" width="375" height="375"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="375"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="375" id="aOA-xS-5qB"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UvA-Va-mdJ" userLabel="Product Name">
-                                <rect key="frame" x="16" y="421" width="295" height="21"/>
+                                <rect key="frame" x="16" y="465" width="295" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -57,13 +57,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ETm-0h-RPa">
-                                <rect key="frame" x="319" y="411" width="40" height="40"/>
+                                <rect key="frame" x="319" y="455" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="dbX-ej-Zk6"/>
                                     <constraint firstAttribute="width" constant="40" id="wfu-Z4-Ubt"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="star_outline"/>
                                 <state key="selected" image="star_filled"/>
+                                <connections>
+                                    <action selector="favoriteClicked:" destination="JEX-9P-axG" eventType="touchUpInside" id="zqr-MN-vZm"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXC-Zr-TcJ" userLabel="Product Description">
                                 <rect key="frame" x="16" y="497" width="343" height="152"/>
@@ -91,7 +94,13 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM"/>
+                    <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM">
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="sez-fH-IPt">
+                            <connections>
+                                <action selector="DoneClicked:" destination="JEX-9P-axG" id="B2m-Jd-CZg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="productCategory" destination="Efg-Nc-DT9" id="Xl3-C1-GeC"/>
                         <outlet property="productDescription" destination="LXC-Zr-TcJ" id="TmS-dx-j2A"/>
@@ -308,7 +317,9 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Detail" id="slM-gQ-Yjw"/>
+                    <navigationItem key="navigationItem" title="Detail" id="slM-gQ-Yjw">
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="efh-p5-g5W"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OZz-xs-AuT" sceneMemberID="firstResponder"/>
             </objects>

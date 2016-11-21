@@ -16,11 +16,34 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var productCategory: UILabel!
     @IBOutlet weak var productDescription: UILabel!
     @IBOutlet weak var productFavorite: UIButton!
+    @IBAction func favoriteClicked(_ sender: Any) {
+        if var detail = self.detailItem {
+            detail.isFavorite = !detail.isFavorite
+            detailItem?.isFavorite = detail.isFavorite
+        
+        productFavorite.setImage(UIImage(named: detail.isFavorite ? "star_filled" : "star_outline"), for: UIControlState.normal)
+        }
+    }
 
+    @IBAction func DoneClicked(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     func configureView() {
         // Update the user interface for the detail item.
         if let detail = self.detailItem {
+            if self.productImage == nil{
+                return
+            }
+
+            let downloadURL = NSURL(string: detail.imageUrl)
+            productImage.af_setImage(withURL: downloadURL as! URL)
             
+            productName.text = detail.name
+            productCategory.text = detail.primaryCategory
+            //            productDescription.text = detail.
+            
+            productFavorite.setImage(UIImage(named: detail.isFavorite ? "star_filled" : "star_outline"), for: UIControlState.normal)
         }
     }
 
@@ -41,7 +64,5 @@ class DetailViewController: UIViewController {
             self.configureView()
         }
     }
-
-
 }
 

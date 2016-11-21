@@ -40,7 +40,8 @@ class RequestManager {
                         price : Double.init(item["price_in_cents"].int! / 100),
                         primaryCategory : item["primary_category"].stringValue,
                         imageUrl : item["image_url"].stringValue,
-                        imageThumbUrl : item["image_thumb_url"].stringValue
+                        imageThumbUrl : item["image_thumb_url"].stringValue,
+                        isFavorite: false
                     );
                     
                     products.append(product)

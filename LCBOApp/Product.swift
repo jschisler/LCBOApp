@@ -82,4 +82,6 @@ struct Product {
      volume_in_milliliters;                 // Total volume of all units in package
      
      */
+    
+    var isFavorite : Bool
 }
