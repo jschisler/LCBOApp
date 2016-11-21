@@ -10,16 +10,19 @@ import Foundation
 
 struct Product {
 
+    // The LCBO product ID / number
+    let id : String
+    
     // Product name
-    let name : String;
+    let name : String
     
     // Current retail price in cents
     // price_in_cents
-    let price : Double;
+    let price : Double
 
     // Primary product category
     // primary_category
-    let primaryCategory : String;
+    let primaryCategory : String
 
     // Alcohol content (Divide by 100 for decimal value)
     // alcohol_content
@@ -42,7 +45,6 @@ struct Product {
      has_clearance_sale;                    // True if the product is currently on clearance [Deprecated]
      has_limited_time_offer;                // True if the product is on sale
      has_value_added_promotion;             // True if the product has a value added promotion
-     id;                                    // The LCBO product ID / number
      inventory_count;                       // Total units across all stores
      inventory_price_in_cents;              // Total retail price of all units across all stores
      inventory_volume_in_milliliters;       // Total volume of all units across all stores

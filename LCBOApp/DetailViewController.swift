@@ -11,7 +11,11 @@ import SwiftyJSON
 
 class DetailViewController: UIViewController {
 
-
+    @IBOutlet weak var productImage: UIImageView!
+    @IBOutlet weak var productName: UILabel!
+    @IBOutlet weak var productCategory: UILabel!
+    @IBOutlet weak var productDescription: UILabel!
+    @IBOutlet weak var productFavorite: UIButton!
 
     func configureView() {
         // Update the user interface for the detail item.

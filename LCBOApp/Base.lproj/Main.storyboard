@@ -10,6 +10,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="pdC-RS-MsL">
+            <objects>
+                <navigationController id="L2e-CL-aNP" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EPC-LJ-IEC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="JEX-9P-axG" kind="relationship" relationship="rootViewController" id="Cs1-9S-BaE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dRI-mz-ijD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1206" y="-692"/>
+        </scene>
         <!--Detail-->
         <scene sceneID="yUG-lL-AsK">
             <objects>
@@ -22,26 +38,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eMZ-2k-djF" userLabel="Product Image View">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eMZ-2k-djF" userLabel="Product Image View">
                                 <rect key="frame" x="0.0" y="28" width="375" height="375"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="375" id="aOA-xS-5qB"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UvA-Va-mdJ" userLabel="Product Name">
-                                <rect key="frame" x="166" y="433" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UvA-Va-mdJ" userLabel="Product Name">
+                                <rect key="frame" x="16" y="421" width="295" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Efg-Nc-DT9" userLabel="Product Category">
-                                <rect key="frame" x="166" y="462" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Efg-Nc-DT9" userLabel="Product Category">
+                                <rect key="frame" x="16" y="459" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXC-Zr-TcJ" userLabel="Product Description">
-                                <rect key="frame" x="166" y="520" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ETm-0h-RPa">
+                                <rect key="frame" x="319" y="411" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="dbX-ej-Zk6"/>
+                                    <constraint firstAttribute="width" constant="40" id="wfu-Z4-Ubt"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="star_outline"/>
+                                <state key="selected" image="star_filled"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXC-Zr-TcJ" userLabel="Product Description">
+                                <rect key="frame" x="16" y="497" width="343" height="152"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -49,17 +74,35 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="eMZ-2k-djF" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" id="9tk-Jl-Wzk"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="eMZ-2k-djF" secondAttribute="trailing" id="b1l-aB-fIf"/>
-                            <constraint firstItem="eMZ-2k-djF" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" id="eSb-Qh-vDM"/>
+                            <constraint firstItem="LXC-Zr-TcJ" firstAttribute="leading" secondItem="Efg-Nc-DT9" secondAttribute="leading" id="1MN-0N-lCp"/>
+                            <constraint firstItem="GAO-Cl-Wes" firstAttribute="top" secondItem="LXC-Zr-TcJ" secondAttribute="bottom" constant="18" id="35O-Oj-mks"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ETm-0h-RPa" secondAttribute="trailing" id="7Wn-zE-PQ5"/>
+                            <constraint firstItem="LXC-Zr-TcJ" firstAttribute="top" secondItem="Efg-Nc-DT9" secondAttribute="bottom" constant="18" id="BsB-mJ-Vbv"/>
+                            <constraint firstItem="eMZ-2k-djF" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" constant="8" symbolic="YES" id="MXe-nu-PKK"/>
+                            <constraint firstItem="Efg-Nc-DT9" firstAttribute="trailing" secondItem="ETm-0h-RPa" secondAttribute="trailing" id="VHC-dk-fJl"/>
+                            <constraint firstItem="Efg-Nc-DT9" firstAttribute="leading" secondItem="UvA-Va-mdJ" secondAttribute="leading" id="WsF-sC-HbQ"/>
+                            <constraint firstItem="ETm-0h-RPa" firstAttribute="top" secondItem="eMZ-2k-djF" secondAttribute="bottom" constant="8" symbolic="YES" id="eNb-gK-I1t"/>
+                            <constraint firstItem="ETm-0h-RPa" firstAttribute="leading" secondItem="UvA-Va-mdJ" secondAttribute="trailing" constant="8" id="h8s-uU-Wmb"/>
+                            <constraint firstAttribute="trailing" secondItem="eMZ-2k-djF" secondAttribute="trailing" id="iQ3-qw-ndO"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="UvA-Va-mdJ" secondAttribute="leading" id="lhc-DH-nxL"/>
+                            <constraint firstItem="LXC-Zr-TcJ" firstAttribute="trailing" secondItem="Efg-Nc-DT9" secondAttribute="trailing" id="mIO-ZV-28u"/>
+                            <constraint firstItem="UvA-Va-mdJ" firstAttribute="centerY" secondItem="ETm-0h-RPa" secondAttribute="centerY" id="ocm-JP-eVG"/>
+                            <constraint firstItem="eMZ-2k-djF" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leading" id="vbg-D5-54Q"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM"/>
+                    <connections>
+                        <outlet property="productCategory" destination="Efg-Nc-DT9" id="Xl3-C1-GeC"/>
+                        <outlet property="productDescription" destination="LXC-Zr-TcJ" id="TmS-dx-j2A"/>
+                        <outlet property="productFavorite" destination="ETm-0h-RPa" id="bqh-9g-ZAK"/>
+                        <outlet property="productImage" destination="eMZ-2k-djF" id="4IL-hv-RR7"/>
+                        <outlet property="productName" destination="UvA-Va-mdJ" id="nXS-yO-dBQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1205.5999999999999" y="-692.20389805097454"/>
+            <point key="canvasLocation" x="2130" y="-692"/>
         </scene>
         <!--Live-->
         <scene sceneID="RfI-Gu-Kos">
@@ -94,7 +137,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="JEX-9P-axG" kind="showDetail" identifier="showDetail" id="5sj-RV-yBt"/>
+                                    <segue destination="L2e-CL-aNP" kind="showDetail" identifier="showDetail" id="a6P-pA-nHE"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -127,7 +170,7 @@
         <scene sceneID="mI2-aS-MaG">
             <objects>
                 <navigationController title="Live" id="HT9-04-fqW" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Live" id="7OG-8L-LLe"/>
+                    <tabBarItem key="tabBarItem" systemItem="search" id="7OG-8L-LLe"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9xI-MW-Ig6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -192,7 +235,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="x2f-gl-i0i" kind="showDetail" identifier="showDetail" id="6Jz-Wy-Wfk"/>
+                                    <segue destination="Bx3-Yh-iYn" kind="showDetail" identifier="showDetail" id="Z2B-wH-tEV"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -211,7 +254,7 @@
         <scene sceneID="lwJ-EF-iyt">
             <objects>
                 <navigationController title="Favorites" id="e7w-7v-77a" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Favorites" id="CGk-jY-s7y"/>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="CGk-jY-s7y"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tm8-2k-btf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -269,10 +312,28 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OZz-xs-AuT" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1206" y="28"/>
+            <point key="canvasLocation" x="2129" y="27"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="eF5-1k-HPS">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CJF-Ux-aHC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="Bx3-Yh-iYn" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yiY-2L-nLf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="x2f-gl-i0i" kind="relationship" relationship="rootViewController" id="3qP-DE-4ms"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="1206" y="27"/>
         </scene>
     </scenes>
     <resources>
         <image name="lcbo.png" width="402" height="402"/>
+        <image name="star_filled" width="40" height="40"/>
+        <image name="star_outline" width="40" height="40"/>
     </resources>
 </document>

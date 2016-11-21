@@ -35,6 +35,7 @@ class RequestManager {
                 
                 for item in items {
                     let product = Product.init(
+                        id : item["id"].stringValue,
                         name : item["name"].stringValue,
                         price : Double.init(item["price_in_cents"].int! / 100),
                         primaryCategory : item["primary_category"].stringValue,
