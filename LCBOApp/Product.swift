@@ -10,9 +10,29 @@ import Foundation
 
 struct Product {
 
+    // Product name
+    let name : String;
+    
+    // Current retail price in cents
+    // price_in_cents
+    let price : Double;
+
+    // Primary product category
+    // primary_category
+    let primaryCategory : String;
+
     // Alcohol content (Divide by 100 for decimal value)
     // alcohol_content
-    let alcoholContent : Double;
+    //let alcoholContent : Double;
+
+    // A URL to an image of the product (Not available for all products)
+    // image_url
+    let imageUrl : String
+    
+    // A URL to a smaller image of the product (Not available for all products)
+    // image_thumb_url
+    let imageThumbUrl : String
+
     /*
      bonus_reward_miles;                    // Number of bonus air miles
      bonus_reward_miles_ends_on;            // When bonus air miles are no longer valid
@@ -34,22 +54,12 @@ struct Product {
      is_ocb;                                // True if the product is produced by a member of the Ontario Craft Brewers
      limited_time_offer_ends_on;            // When the sale price is no longer valid
      limited_time_offer_savings_in_cents;   // Savings in cents if on sale
-     */
-    // Product name
-     let name : String;
-    /*
      origin;                                // Country of origin / manufacture
      package;                               // Full package description
      package_unit_type;                     // Package unit type (bottle, can, etc.)
      package_unit_volume_in_milliliters;    // The volume of one unit in the package
-     price_in_cents;                        // Current retail price in cents
      price_per_liter_in_cents;              // The beverage price per liter
      price_per_liter_of_alcohol_in_cents;   // The alcohol price per liter
-     */
-    // Primary product category
-    // primary_category
-    let primaryCategory : String;
-    /*
      producer_name;                         // Name of the company that produces the product
      product_no;                            // The LCBO product ID / number [Deprecated]
      regular_price_in_cents;                // Regular retail price in cents
@@ -58,15 +68,6 @@ struct Product {
      serving_suggestion;                    // LCBO serving suggestion (Not available for all products)
      style;                                 // The LCBO’s determined style designation (Not available for most products)
      tertiary_category;                     // Tertiary LCBO product category (Not available for all products)
-     */
-    // A URL to an image of the product (Not available for all products)
-    // image_url
-    let imageUrl : String
-    
-    // A URL to a smaller image of the product (Not available for all products)
-    // image_thumb_url
-    let imageThumbUrl : String
-    /*
      stock_type;                            // Either “LCBO” or “VINTAGES”
      sugar_content;                         // The product’s sweetness descriptor, is usually a designation such as extra-dry (XD), medium sweet (MS), etc. (Not available for all products)
      sugar_in_grams_per_liter;              // The amount of sugar that is contained in the product in grams per liter. (Not available for all products)

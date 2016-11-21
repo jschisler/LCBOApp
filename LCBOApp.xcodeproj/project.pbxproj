@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		975716A01DE1F7F300B94E30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9757169F1DE1F7F300B94E30 /* AppDelegate.swift */; };
 		975716A31DE1F7F300B94E30 /* LCBOApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 975716A11DE1F7F300B94E30 /* LCBOApp.xcdatamodeld */; };
-		975716A51DE1F7F300B94E30 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975716A41DE1F7F300B94E30 /* MasterViewController.swift */; };
+		975716A51DE1F7F300B94E30 /* LiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975716A41DE1F7F300B94E30 /* LiveViewController.swift */; };
 		975716A71DE1F7F300B94E30 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975716A61DE1F7F300B94E30 /* DetailViewController.swift */; };
 		975716AA1DE1F7F300B94E30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 975716A81DE1F7F300B94E30 /* Main.storyboard */; };
 		975716AC1DE1F7F300B94E30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 975716AB1DE1F7F300B94E30 /* Assets.xcassets */; };
@@ -26,6 +26,8 @@
 		975717431DE2182A00B94E30 /* LCBORequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975717421DE2182A00B94E30 /* LCBORequest.swift */; };
 		975717781DE22CC300B94E30 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9757176A1DE22C8500B94E30 /* AlamofireImage.framework */; };
 		975717791DE22CC300B94E30 /* AlamofireImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9757176A1DE22C8500B94E30 /* AlamofireImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		976470C91DE327E100DF984D /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976470C81DE327E100DF984D /* DataStore.swift */; };
+		9764710A1DE3331500DF984D /* lcbo.png in Resources */ = {isa = PBXBuildFile; fileRef = 976471091DE3331500DF984D /* lcbo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -233,7 +235,7 @@
 		9757169C1DE1F7F300B94E30 /* LCBOApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LCBOApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9757169F1DE1F7F300B94E30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		975716A21DE1F7F300B94E30 /* LCBOApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LCBOApp.xcdatamodel; sourceTree = "<group>"; };
-		975716A41DE1F7F300B94E30 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		975716A41DE1F7F300B94E30 /* LiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewController.swift; sourceTree = "<group>"; };
 		975716A61DE1F7F300B94E30 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		975716A91DE1F7F300B94E30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		975716AB1DE1F7F300B94E30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -252,6 +254,8 @@
 		975717241DE20C7600B94E30 /* SwiftyJSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyJSON.xcodeproj; path = LCBOApp/Support/SwiftyJSON/SwiftyJSON.xcodeproj; sourceTree = "<group>"; };
 		975717421DE2182A00B94E30 /* LCBORequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LCBORequest.swift; sourceTree = "<group>"; };
 		9757175E1DE22C8500B94E30 /* AlamofireImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AlamofireImage.xcodeproj; path = LCBOApp/Support/AlamofireImage/AlamofireImage.xcodeproj; sourceTree = "<group>"; };
+		976470C81DE327E100DF984D /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		976471091DE3331500DF984D /* lcbo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lcbo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -308,9 +312,10 @@
 		9757169E1DE1F7F300B94E30 /* LCBOApp */ = {
 			isa = PBXGroup;
 			children = (
+				976471091DE3331500DF984D /* lcbo.png */,
 				975716D61DE2086700B94E30 /* RequestManager.swift */,
 				9757169F1DE1F7F300B94E30 /* AppDelegate.swift */,
-				975716A41DE1F7F300B94E30 /* MasterViewController.swift */,
+				975716A41DE1F7F300B94E30 /* LiveViewController.swift */,
 				975716A61DE1F7F300B94E30 /* DetailViewController.swift */,
 				975716A81DE1F7F300B94E30 /* Main.storyboard */,
 				975716AB1DE1F7F300B94E30 /* Assets.xcassets */,
@@ -320,6 +325,7 @@
 				975716D21DE1F8D500B94E30 /* Product.swift */,
 				975716D41DE2042300B94E30 /* FavoritesViewController.swift */,
 				975717421DE2182A00B94E30 /* LCBORequest.swift */,
+				976470C81DE327E100DF984D /* DataStore.swift */,
 			);
 			path = LCBOApp;
 			sourceTree = "<group>";
@@ -665,6 +671,7 @@
 				975716AF1DE1F7F300B94E30 /* LaunchScreen.storyboard in Resources */,
 				975716AC1DE1F7F300B94E30 /* Assets.xcassets in Resources */,
 				975716AA1DE1F7F300B94E30 /* Main.storyboard in Resources */,
+				9764710A1DE3331500DF984D /* lcbo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -691,8 +698,9 @@
 			files = (
 				975716A01DE1F7F300B94E30 /* AppDelegate.swift in Sources */,
 				975716A31DE1F7F300B94E30 /* LCBOApp.xcdatamodeld in Sources */,
+				976470C91DE327E100DF984D /* DataStore.swift in Sources */,
 				975716D31DE1F8D500B94E30 /* Product.swift in Sources */,
-				975716A51DE1F7F300B94E30 /* MasterViewController.swift in Sources */,
+				975716A51DE1F7F300B94E30 /* LiveViewController.swift in Sources */,
 				975716D71DE2086700B94E30 /* RequestManager.swift in Sources */,
 				975717431DE2182A00B94E30 /* LCBORequest.swift in Sources */,
 				975716D51DE2042300B94E30 /* FavoritesViewController.swift in Sources */,

@@ -3,15 +3,17 @@
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
-    "D2AD29AE1B693121D0EDBB4855C96B75ECBB0D86" : 9223372036854775807,
-    "C861FC00CEE0F6A6BE81FCFF6785FAA78C58EBB3" : 9223372036854775807,
-    "67620B5EFA902936DF04070AF595B76AB0333747" : 9223372036854775807
+    "67620B5EFA902936DF04070AF595B76AB0333747+++C25CE76" : 9223372036854775807,
+    "C861FC00CEE0F6A6BE81FCFF6785FAA78C58EBB3+++18C722E" : 9223372036854775807,
+    "67620B5EFA902936DF04070AF595B76AB0333747+++CBBA459" : 9223372036854775807,
+    "D2AD29AE1B693121D0EDBB4855C96B75ECBB0D86+++F156B72" : 9223372036854775807
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "3BF827AD-37B7-4DE0-BB4F-8448E18C1D67",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "D2AD29AE1B693121D0EDBB4855C96B75ECBB0D86" : "LCBOApp\/LCBOApp\/Support\/AlamofireImage\/",
-    "C861FC00CEE0F6A6BE81FCFF6785FAA78C58EBB3" : "LCBOApp\/LCBOApp\/Support\/SwiftyJSON\/",
-    "67620B5EFA902936DF04070AF595B76AB0333747" : "LCBOApp\/LCBOApp\/Support\/Alamofire\/"
+    "67620B5EFA902936DF04070AF595B76AB0333747+++C25CE76" : "LCBOApp\/LCBOApp\/Support\/Alamofire\/",
+    "C861FC00CEE0F6A6BE81FCFF6785FAA78C58EBB3+++18C722E" : "LCBOApp\/LCBOApp\/Support\/SwiftyJSON\/",
+    "67620B5EFA902936DF04070AF595B76AB0333747+++CBBA459" : "LCBOApp\/LCBOApp\/Support\/Alamofire\/",
+    "D2AD29AE1B693121D0EDBB4855C96B75ECBB0D86+++F156B72" : "LCBOApp\/LCBOApp\/Support\/AlamofireImage\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "LCBOApp",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
@@ -20,22 +22,22 @@
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Alamofire\/Alamofire.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "67620B5EFA902936DF04070AF595B76AB0333747"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "67620B5EFA902936DF04070AF595B76AB0333747+++C25CE76"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Alamofire\/Alamofire.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "67620B5EFA902936DF04070AF595B76AB0333747"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "67620B5EFA902936DF04070AF595B76AB0333747+++CBBA459"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/SwiftyJSON\/SwiftyJSON.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C861FC00CEE0F6A6BE81FCFF6785FAA78C58EBB3"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C861FC00CEE0F6A6BE81FCFF6785FAA78C58EBB3+++18C722E"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Alamofire\/AlamofireImage.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D2AD29AE1B693121D0EDBB4855C96B75ECBB0D86"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D2AD29AE1B693121D0EDBB4855C96B75ECBB0D86+++F156B72"
     }
   ]
 }

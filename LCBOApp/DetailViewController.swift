@@ -7,18 +7,16 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class DetailViewController: UIViewController {
 
-    @IBOutlet weak var detailDescriptionLabel: UILabel!
 
 
     func configureView() {
         // Update the user interface for the detail item.
         if let detail = self.detailItem {
-            if let label = self.detailDescriptionLabel {
-                label.text = detail.timestamp!.description
-            }
+            
         }
     }
 
@@ -33,7 +31,7 @@ class DetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    var detailItem: Event? {
+    var detailItem: Product? {
         didSet {
             // Update the view.
             self.configureView()

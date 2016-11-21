@@ -1,8 +1,8 @@
 //
 //  FavoritesViewController.swift
-//  LCBOApp
+//  MasterDetailTest
 //
-//  Created by John Schisler on 2016-11-20.
+//  Created by John Schisler on 2016-11-21.
 //  Copyright © 2016 John Schisler. All rights reserved.
 //
 
@@ -11,28 +11,11 @@ import CoreData
 
 class FavoritesViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
-    var managedObjectContext: NSManagedObjectContext? = nil
-    var products = [Product]()
-    var filteredProducts = [Product]()
-    let searchController = UISearchController(searchResultsController: nil)
+    var managedObjectContext: NSManagedObjectContext? = DataStore.sharedInstance.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Setup the Search Controller
-        searchController.searchResultsUpdater = self
-        searchController.searchBar.delegate = self
-        definesPresentationContext = true
-        searchController.dimsBackgroundDuringPresentation = false
-        
-        // Setup the Scope Bar
-        searchController.searchBar.scopeButtonTitles = ["Spirits", "Wine", "Hard", "Other"]
-        tableView.tableHeaderView = searchController.searchBar
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        self.clearsSelectionOnViewWillAppear = self.splitViewController!.isCollapsed
-        super.viewWillAppear(animated)
+        // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func didReceiveMemoryWarning() {
@@ -65,9 +48,7 @@ class FavoritesViewController: UITableViewController, NSFetchedResultsController
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let object = self.fetchedResultsController.object(at: indexPath)
                 let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
-                controller.detailItem = object
-                controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
-                controller.navigationItem.leftItemsSupplementBackButton = true
+//                controller.detailItem = object
             }
         }
     }
@@ -75,44 +56,44 @@ class FavoritesViewController: UITableViewController, NSFetchedResultsController
     // MARK: - Table View
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return self.fetchedResultsController.sections?.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return products.count
+        let sectionInfo = self.fetchedResultsController.sections![section]
+        return sectionInfo.numberOfObjects
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        let product: Product
-        
-        if searchController.isActive && searchController.searchBar.text != "" {
-            product = filteredProducts[indexPath.row]
-        } else {
-            product = products[indexPath.row]
-        }
-        
-        cell.textLabel!.text = product.name
-        cell.detailTextLabel!.text = product.primaryCategory
-        
+        let event = self.fetchedResultsController.object(at: indexPath)
+        self.configureCell(cell, withEvent: event)
         return cell
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
-        return false
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let context = self.fetchedResultsController.managedObjectContext
+            context.delete(self.fetchedResultsController.object(at: indexPath))
+            
+            do {
+                try context.save()
+            } catch {
+                // Replace this implementation with code to handle the error appropriately.
+                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                let nserror = error as NSError
+                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+            }
+        }
     }
     
     func configureCell(_ cell: UITableViewCell, withEvent event: Event) {
         cell.textLabel!.text = event.timestamp!.description
-    }
-    
-    func filterContentForSearchText(_ searchText: String, scope: String = "All") {
-        filteredProducts = products.filter({( product : Product) -> Bool in
-            let categoryMatch = (scope == "All") || (product.primaryCategory == scope)
-            return categoryMatch && product.name.lowercased().contains(searchText.lowercased())
-        })
-        tableView.reloadData()
     }
     
     // MARK: - Fetched results controller
@@ -194,18 +175,3 @@ class FavoritesViewController: UITableViewController, NSFetchedResultsController
     
 }
 
-extension FavoritesViewController: UISearchBarDelegate {
-    // MARK: - UISearchBar Delegate
-    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
-        filterContentForSearchText(searchBar.text!, scope: searchBar.scopeButtonTitles![selectedScope])
-    }
-}
-
-extension FavoritesViewController: UISearchResultsUpdating {
-    // MARK: - UISearchResultsUpdating Delegate
-    func updateSearchResults(for searchController: UISearchController) {
-        let searchBar = searchController.searchBar
-        let scope = searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
-        filterContentForSearchText(searchController.searchBar.text!, scope: scope)
-    }
-}

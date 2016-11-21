@@ -4,7 +4,7 @@ import SwiftyJSON
 
 class RequestManager {
     
-    var searchResults = [JSON]()
+    var searchResults = [Product]()
     
     var pageString: String {
         if pageNumber == 1 {
@@ -31,10 +31,24 @@ class RequestManager {
                 print("Results: \(results)")
 
                 let items = JSON(results["result"]!).arrayValue
-                let pager = JSON(results["pager"]!)
+                var products = [Product]()
                 
+                for item in items {
+                    let product = Product.init(
+                        name : item["name"].stringValue,
+                        price : Double.init(item["price_in_cents"].int! / 100),
+                        primaryCategory : item["primary_category"].stringValue,
+                        imageUrl : item["image_url"].stringValue,
+                        imageThumbUrl : item["image_thumb_url"].stringValue
+                    );
+                    
+                    products.append(product)
+                }
+
+                let pager = JSON(results["pager"]!)
+
                 self.hasMore = pager["is_final_page"].boolValue
-                self.searchResults += items
+                self.searchResults += products
                 
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "searchResultsUpdated"), object: nil)
             }
