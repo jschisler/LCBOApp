@@ -21,7 +21,15 @@ class DetailViewController: UIViewController {
             detail.isFavorite = !detail.isFavorite
             detailItem?.isFavorite = detail.isFavorite
         
-        productFavorite.setImage(UIImage(named: detail.isFavorite ? "star_filled" : "star_outline"), for: UIControlState.normal)
+            productFavorite.setImage(UIImage(named: detail.isFavorite ? "star_filled" : "star_outline"), for: UIControlState.normal)
+            
+            //  Insert into favorites data store
+            if detail.isFavorite {
+                DataStore.sharedInstance.insertProduct(product: detailItem!)
+            } else {
+                //  Remove from data store
+                DataStore.sharedInstance.deleteProduct(id: (detailItem?.id)!)
+            }
         }
     }
 
@@ -31,7 +39,8 @@ class DetailViewController: UIViewController {
     
     func configureView() {
         // Update the user interface for the detail item.
-        if let detail = self.detailItem {
+        
+        if var detail = self.detailItem {
             if self.productImage == nil{
                 return
             }
@@ -41,8 +50,12 @@ class DetailViewController: UIViewController {
             
             productName.text = detail.name
             productCategory.text = detail.primaryCategory
-            //            productDescription.text = detail.
             
+            let formatter = NumberFormatter()
+            formatter.numberStyle = .currency
+            productDescription.text = formatter.string(from: NSNumber.init(floatLiteral: detail.price))
+
+            detail.isFavorite = (DataStore.sharedInstance.findProduct(id: detail.id) != nil)
             productFavorite.setImage(UIImage(named: detail.isFavorite ? "star_filled" : "star_outline"), for: UIControlState.normal)
         }
     }

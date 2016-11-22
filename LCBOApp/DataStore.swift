@@ -63,4 +63,67 @@ class DataStore
             }
         }
     }
+    
+    func insertProduct(product: Product) {
+        let context = persistentContainer.viewContext
+        let newProduct = ProductEntity(context: context)
+        
+        // If appropriate, configure the new managed object.
+        newProduct.id = product.id
+        newProduct.imageThumbUrl = product.imageThumbUrl
+        newProduct.imageUrl = product.imageUrl
+        newProduct.name = product.name
+        newProduct.price = product.price
+        newProduct.primaryCategory = product.primaryCategory
+        
+        // Save the context.
+        do {
+            try newProduct.managedObjectContext?.save()
+        } catch {
+            // Replace this implementation with code to handle the error appropriately.
+            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            let nserror = error as NSError
+            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+        }
+    }
+    
+    func deleteProduct(id: String) {
+        let context = persistentContainer.viewContext
+        
+        do {
+            context.delete(findProduct(id: id)!)
+            try context.save()
+        } catch {
+            // Replace this implementation with code to handle the error appropriately.
+            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            let nserror = error as NSError
+            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+        }
+    }
+    
+    func findProduct(id: String) -> ProductEntity? {
+        let context = persistentContainer.viewContext
+        
+        do {
+            // Initialize Fetch Request
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>()
+            
+            // Create Entity Description
+            let entityDescription = NSEntityDescription.entity(forEntityName: "ProductEntity", in: context)
+            
+            // Configure Fetch Request
+            fetchRequest.entity = entityDescription
+            fetchRequest.fetchLimit = 1
+            fetchRequest.predicate = NSPredicate(format: "id == %@", id)
+            var objects: [ProductEntity]
+            try objects = context.fetch(fetchRequest) as! [ProductEntity]
+            
+            return objects.count == 0 ? nil : objects[0]
+        } catch {
+            // Replace this implementation with code to handle the error appropriately.
+            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            let nserror = error as NSError
+            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+        }
+    }
 }

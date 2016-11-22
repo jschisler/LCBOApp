@@ -62,10 +62,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXC-Zr-TcJ" userLabel="Product Description">
-                                <rect key="frame" x="16" y="542" width="343" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="uxy-CE-cL0"/>
-                                </constraints>
+                                <rect key="frame" x="16" y="542" width="343" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -96,7 +93,7 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM">
+                    <navigationItem key="navigationItem" title="Product Details" id="mOI-FS-AaM">
                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="sez-fH-IPt">
                             <connections>
                                 <action selector="DoneClicked:" destination="JEX-9P-axG" id="B2m-Jd-CZg"/>
@@ -330,10 +327,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b5J-ZL-WMO" userLabel="Product Description">
-                                <rect key="frame" x="16" y="542" width="343" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="iJX-18-oRm"/>
-                                </constraints>
+                                <rect key="frame" x="16" y="542" width="343" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -364,7 +358,7 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Detail" id="ewN-AQ-wAL">
+                    <navigationItem key="navigationItem" title="Product Details" id="ewN-AQ-wAL">
                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="tqk-aG-rDz">
                             <connections>
                                 <action selector="DoneClicked:" destination="9KK-zl-fhh" id="NtJ-ps-BE1"/>
