@@ -84,4 +84,32 @@ struct Product {
      */
     
     var isFavorite : Bool
+    
+    init(id : String,
+        name : String,
+        price : Double,
+        primaryCategory : String,
+        imageUrl : String,
+        imageThumbUrl : String,
+        isFavorite : Bool)
+    {
+        self.id = id
+        self.name = name
+        self.price = price
+        self.primaryCategory = primaryCategory
+        self.imageUrl = imageUrl
+        self.imageThumbUrl = imageThumbUrl
+        self.isFavorite = isFavorite
+    }
+    
+    init(entity: ProductEntity)
+    {
+        id = entity.id!
+        name = entity.name!
+        price = entity.price
+        primaryCategory = entity.primaryCategory!
+        imageUrl = entity.imageUrl!
+        imageThumbUrl = entity.imageThumbUrl!
+        isFavorite = true
+    }
 }

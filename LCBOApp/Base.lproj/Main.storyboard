@@ -251,7 +251,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="QnD-VD-2Ul" kind="showDetail" id="rLu-8I-gjf"/>
+                                    <segue destination="QnD-VD-2Ul" kind="showDetail" identifier="showDetail" id="rLu-8I-gjf"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -366,7 +366,7 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Product Details" id="ewN-AQ-wAL">
+                    <navigationItem key="navigationItem" title="Favorite Details" id="ewN-AQ-wAL">
                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="tqk-aG-rDz">
                             <connections>
                                 <action selector="DoneClicked:" destination="9KK-zl-fhh" id="NtJ-ps-BE1"/>
@@ -374,11 +374,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="productCategory" destination="ZGl-yf-DqA" id="Zoc-SR-DYf"/>
-                        <outlet property="productDescription" destination="b5J-ZL-WMO" id="IWz-IN-qOR"/>
-                        <outlet property="productFavorite" destination="WNG-tj-3gd" id="bCw-1b-rrm"/>
-                        <outlet property="productImage" destination="HrY-HI-Rv5" id="syJ-sJ-zQL"/>
-                        <outlet property="productName" destination="oid-HC-ZsY" id="hIh-Lk-DdW"/>
+                        <outlet property="productCategory" destination="ZGl-yf-DqA" id="FZT-IE-Y4Z"/>
+                        <outlet property="productDescription" destination="b5J-ZL-WMO" id="a0q-gU-FCL"/>
+                        <outlet property="productFavorite" destination="WNG-tj-3gd" id="yP9-MG-p9a"/>
+                        <outlet property="productImage" destination="HrY-HI-Rv5" id="w5D-eb-hRO"/>
+                        <outlet property="productName" destination="oid-HC-ZsY" id="7Ju-UC-kj8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yz7-jT-5ov" sceneMemberID="firstResponder"/>
