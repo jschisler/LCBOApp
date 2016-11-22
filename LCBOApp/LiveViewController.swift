@@ -40,7 +40,7 @@ class LiveViewController: UITableViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(LiveViewController.updateSearchResults), name: NSNotification.Name(rawValue: "searchResultsUpdated"), object: nil)
         
         // Setup the Scope Bar
-        searchController.searchBar.scopeButtonTitles = ["All", "Beer", "Wine", "Spirits", "Coolers"]
+        //searchController.searchBar.scopeButtonTitles = ["All", "Beer", "Wine", "Spirits", "Coolers"]
         tableView.tableHeaderView = searchController.searchBar
     }
     
