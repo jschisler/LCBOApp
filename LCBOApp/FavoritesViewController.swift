@@ -73,9 +73,7 @@ class FavoritesViewController: UITableViewController, NSFetchedResultsController
     func configureCell(_ cell: UITableViewCell, withProduct product: ProductEntity) {
         cell.textLabel?.text = product.name
         cell.detailTextLabel?.text = product.primaryCategory
-        
-        let downloadURL = NSURL(string: product.imageThumbUrl!)
-        cell.imageView?.af_setImage(withURL: downloadURL as! URL)
+        cell.imageView?.image = product.imageThumb as! UIImage?
     }
     
     // MARK: - Fetched results controller

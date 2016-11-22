@@ -58,8 +58,9 @@ class LiveViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
-                let object = searchResults[indexPath.row]
+                var object = searchResults[indexPath.row]
                 let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
+                object.imageThumb = tableView.cellForRow(at: indexPath)?.imageView?.image
                 controller.detailItem = object
             }
         }

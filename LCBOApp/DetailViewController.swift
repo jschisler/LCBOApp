@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyJSON
+import Alamofire
 
 class DetailViewController: UIViewController {
 
@@ -45,9 +46,7 @@ class DetailViewController: UIViewController {
                 return
             }
 
-            let downloadURL = NSURL(string: detail.imageUrl)
-            productImage.af_setImage(withURL: downloadURL as! URL)
-            
+            productImage.image = detail.image
             productName.text = detail.name
             productCategory.text = detail.primaryCategory
             
@@ -73,7 +72,21 @@ class DetailViewController: UIViewController {
 
     var detailItem: Product? {
         didSet {
-            // Update the view.
+            if self.detailItem?.image == nil {
+                Alamofire.request((detailItem?.imageUrl)!, method: .get).responseImage {
+                    response in
+                    self.detailItem?.image = response.result.value
+                    self.productImage.image = response.result.value
+                }
+            }
+            
+            if self.detailItem?.imageThumb == nil {
+                Alamofire.request((detailItem?.imageThumbUrl)!, method: .get).responseImage {
+                    response in
+                    self.detailItem?.imageThumb = response.result.value
+                }
+            }
+            
             self.configureView()
         }
     }
