@@ -11,8 +11,6 @@ import CoreData
 
 class FavoritesViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
-    var managedObjectContext: NSManagedObjectContext? = DataStore.sharedInstance.viewContext
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -21,23 +19,6 @@ class FavoritesViewController: UITableViewController, NSFetchedResultsController
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func insertNewObject(_ sender: Any) {
-        let context = self.fetchedResultsController.managedObjectContext
-        let newProduct = ProductEntity(context: context)
-        
-        // If appropriate, configure the new managed object.
-        
-        // Save the context.
-        do {
-            try context.save()
-        } catch {
-            // Replace this implementation with code to handle the error appropriately.
-            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            let nserror = error as NSError
-            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-        }
     }
     
     // MARK: - Segues
@@ -64,7 +45,7 @@ class FavoritesViewController: UITableViewController, NSFetchedResultsController
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath)
         let product = self.fetchedResultsController.object(at: indexPath)
         self.configureCell(cell, withProduct: product)
         return cell
@@ -77,11 +58,10 @@ class FavoritesViewController: UITableViewController, NSFetchedResultsController
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let context = self.fetchedResultsController.managedObjectContext
-            context.delete(self.fetchedResultsController.object(at: indexPath))
+            DataStore.sharedInstance.viewContext.delete(self.fetchedResultsController.object(at: indexPath))
             
             do {
-                try context.save()
+                try DataStore.sharedInstance.viewContext.save()
             } catch {
                 // Replace this implementation with code to handle the error appropriately.
                 // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
@@ -92,7 +72,11 @@ class FavoritesViewController: UITableViewController, NSFetchedResultsController
     }
     
     func configureCell(_ cell: UITableViewCell, withProduct product: ProductEntity) {
-//        cell.textLabel!.text = event.timestamp!.description
+        cell.textLabel?.text = product.name
+        cell.detailTextLabel?.text = product.primaryCategory
+        
+        let downloadURL = NSURL(string: product.imageThumbUrl!)
+        cell.imageView?.af_setImage(withURL: downloadURL as! URL)
     }
     
     // MARK: - Fetched results controller
@@ -114,7 +98,7 @@ class FavoritesViewController: UITableViewController, NSFetchedResultsController
         
         // Edit the section name key path and cache name if appropriate.
         // nil for section name key path means "no sections".
-        let aFetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.managedObjectContext!, sectionNameKeyPath: nil, cacheName: "Master")
+        let aFetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: DataStore.sharedInstance.viewContext, sectionNameKeyPath: nil, cacheName: nil)
         aFetchedResultsController.delegate = self
         _fetchedResultsController = aFetchedResultsController
         
