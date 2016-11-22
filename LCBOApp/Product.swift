@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct Product {
 
@@ -84,6 +85,9 @@ struct Product {
      */
     
     var isFavorite : Bool
+    
+    var image : UIImage?
+    var imageThumb : UIImage?
     
     init(id : String,
         name : String,

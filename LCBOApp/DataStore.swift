@@ -75,6 +75,8 @@ class DataStore
         newProduct.name = product.name
         newProduct.price = product.price
         newProduct.primaryCategory = product.primaryCategory
+        newProduct.imageThumb = product.imageThumb
+        newProduct.image = product.image
         
         // Save the context.
         do {
