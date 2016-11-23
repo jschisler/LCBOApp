@@ -62,7 +62,7 @@ class DataStore
         }
     }
     
-    func insertProduct(product: Product) {
+    func insertProduct(product: ProductInfo) {
         let context = persistentContainer.viewContext
         let newProduct = ProductEntity(context: context)
         

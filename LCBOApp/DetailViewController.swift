@@ -70,13 +70,13 @@ class DetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    var detailItem: Product? {
+    var detailItem: ProductInfo? {
         didSet {
             if self.detailItem?.image == nil {
                 Alamofire.request((detailItem?.imageUrl)!, method: .get).responseImage {
                     response in
                     self.detailItem?.image = response.result.value
-                    self.productImage.image = response.result.value
+                    self.productImage?.image = response.result.value
                 }
             }
             

@@ -1,82 +1,73 @@
 //
-//  FavoritesViewController.swift
-//  FavoritesViewController
+//  ProductListDataProvider.swift
+//  LCBOApp
 //
-//  Created by John Schisler on 2016-11-21.
+//  Created by John Schisler on 2016-11-23.
 //  Copyright © 2016 John Schisler. All rights reserved.
 //
 
 import UIKit
 import CoreData
 
-class FavoritesViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+public class ProductListDataProvider: NSObject, ProductListDataProviderProtocol {
+    public var managedObjectContext: NSManagedObjectContext?
+    weak public var tableView: UITableView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    var _fetchedResultsController: NSFetchedResultsController<ProductEntity>? = nil
+    
+    public func addProduct(productInfo: ProductInfo) {
+        
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    func configureCell(cell: UITableViewCell, atIndexPath indexPath: NSIndexPath) {
+        let product = self.fetchedResultsController.object(at: indexPath as IndexPath)
+        
+        cell.textLabel?.text = product.name
+        cell.detailTextLabel?.text = product.primaryCategory
+        cell.imageView?.image = product.imageThumb as! UIImage?
+    }
+    
+    public func fetch() {
+        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+        let sortDescriptors = [sortDescriptor]
+        
+        fetchedResultsController.fetchRequest.sortDescriptors = sortDescriptors
         
         do {
-            try _fetchedResultsController?.performFetch()
-            self.tableView.reloadData()
+            try _fetchedResultsController!.performFetch()
         } catch {
             // Replace this implementation with code to handle the error appropriately.
             // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
             let nserror = error as NSError
             fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
         }
+        tableView.reloadData()
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    // MARK: - Segues
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showDetail" {
-            if let indexPath = self.tableView.indexPathForSelectedRow {
-                let object = self.fetchedResultsController.object(at: indexPath)
-                let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
-                controller.detailItem = ProductInfo.init(entity: object as ProductEntity)
-            }
-        }
-    }
-    
-    // MARK: - Table View
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
+}
+
+extension ProductListDataProvider: UITableViewDataSource {
+    public func numberOfSections(in tableView: UITableView) -> Int {
         return self.fetchedResultsController.sections?.count ?? 0
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let sectionInfo = self.fetchedResultsController.sections![section]
         return sectionInfo.numberOfObjects
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath)
-        let product = self.fetchedResultsController.object(at: indexPath)
-        self.configureCell(cell, withProduct: product)
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath as IndexPath)
+        self.configureCell(cell: cell, atIndexPath: indexPath as NSIndexPath)
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+    public func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return false
     }
-    
-    func configureCell(_ cell: UITableViewCell, withProduct product: ProductEntity) {
-        cell.textLabel?.text = product.name
-        cell.detailTextLabel?.text = product.primaryCategory
-        cell.imageView?.image = product.imageThumb as! UIImage?
-    }
-    
-    // MARK: - Fetched results controller
+}
+
+extension ProductListDataProvider : NSFetchedResultsControllerDelegate {
     
     var fetchedResultsController: NSFetchedResultsController<ProductEntity> {
         if _fetchedResultsController != nil {
@@ -110,10 +101,4 @@ class FavoritesViewController: UITableViewController, NSFetchedResultsController
         
         return _fetchedResultsController!
     }
-    var _fetchedResultsController: NSFetchedResultsController<ProductEntity>? = nil
-    
-     private func controllerDidChangeContent(controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        self.tableView.reloadData()
-     }
 }
-

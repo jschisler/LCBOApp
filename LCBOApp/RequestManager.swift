@@ -4,7 +4,7 @@ import SwiftyJSON
 
 class RequestManager {
     
-    var searchResults = [Product]()
+    var searchResults = [ProductInfo]()
     
     var pageString: String {
         if pageNumber == 1 {
@@ -31,10 +31,10 @@ class RequestManager {
                 print("Results: \(results)")
 
                 let items = JSON(results["result"]!).arrayValue
-                var products = [Product]()
+                var products = [ProductInfo]()
                 
                 for item in items {
-                    let product = Product.init(
+                    let product = ProductInfo.init(
                         id : item["id"].stringValue,
                         name : item["name"].stringValue,
                         price : Double.init(item["price_in_cents"].int! / 100),

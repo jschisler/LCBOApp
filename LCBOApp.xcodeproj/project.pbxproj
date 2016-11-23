@@ -16,7 +16,7 @@
 		975716AF1DE1F7F300B94E30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 975716AD1DE1F7F300B94E30 /* LaunchScreen.storyboard */; };
 		975716BA1DE1F7F400B94E30 /* LCBOAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975716B91DE1F7F400B94E30 /* LCBOAppTests.swift */; };
 		975716C51DE1F7F400B94E30 /* LCBOAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975716C41DE1F7F400B94E30 /* LCBOAppUITests.swift */; };
-		975716D31DE1F8D500B94E30 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975716D21DE1F8D500B94E30 /* Product.swift */; };
+		975716D31DE1F8D500B94E30 /* ProductInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975716D21DE1F8D500B94E30 /* ProductInfo.swift */; };
 		975716D51DE2042300B94E30 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975716D41DE2042300B94E30 /* FavoritesViewController.swift */; };
 		975716D71DE2086700B94E30 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975716D61DE2086700B94E30 /* RequestManager.swift */; };
 		9757171F1DE20B8D00B94E30 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 975717111DE20B2C00B94E30 /* Alamofire.framework */; };
@@ -28,6 +28,9 @@
 		975717791DE22CC300B94E30 /* AlamofireImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9757176A1DE22C8500B94E30 /* AlamofireImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		976470C91DE327E100DF984D /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976470C81DE327E100DF984D /* DataStore.swift */; };
 		9764710A1DE3331500DF984D /* lcbo.png in Resources */ = {isa = PBXBuildFile; fileRef = 976471091DE3331500DF984D /* lcbo.png */; };
+		97BB1DB61DE5EA63002BC520 /* ProductListDataProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BB1DB51DE5EA63002BC520 /* ProductListDataProviderProtocol.swift */; };
+		97BB1DB81DE5EC50002BC520 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BB1DB71DE5EC50002BC520 /* Product.swift */; };
+		97BB1DBA1DE5ED9D002BC520 /* ProductListDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BB1DB91DE5ED9D002BC520 /* ProductListDataProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -247,7 +250,7 @@
 		975716C01DE1F7F400B94E30 /* LCBOAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LCBOAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		975716C41DE1F7F400B94E30 /* LCBOAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCBOAppUITests.swift; sourceTree = "<group>"; };
 		975716C61DE1F7F400B94E30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		975716D21DE1F8D500B94E30 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		975716D21DE1F8D500B94E30 /* ProductInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductInfo.swift; sourceTree = "<group>"; };
 		975716D41DE2042300B94E30 /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		975716D61DE2086700B94E30 /* RequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		975717051DE20B2B00B94E30 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = LCBOApp/Support/Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
@@ -256,6 +259,9 @@
 		9757175E1DE22C8500B94E30 /* AlamofireImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AlamofireImage.xcodeproj; path = LCBOApp/Support/AlamofireImage/AlamofireImage.xcodeproj; sourceTree = "<group>"; };
 		976470C81DE327E100DF984D /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		976471091DE3331500DF984D /* lcbo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lcbo.png; sourceTree = "<group>"; };
+		97BB1DB51DE5EA63002BC520 /* ProductListDataProviderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductListDataProviderProtocol.swift; sourceTree = "<group>"; };
+		97BB1DB71DE5EC50002BC520 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		97BB1DB91DE5ED9D002BC520 /* ProductListDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductListDataProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -322,10 +328,13 @@
 				975716AD1DE1F7F300B94E30 /* LaunchScreen.storyboard */,
 				975716B01DE1F7F300B94E30 /* Info.plist */,
 				975716A11DE1F7F300B94E30 /* LCBOApp.xcdatamodeld */,
-				975716D21DE1F8D500B94E30 /* Product.swift */,
+				975716D21DE1F8D500B94E30 /* ProductInfo.swift */,
 				975716D41DE2042300B94E30 /* FavoritesViewController.swift */,
 				975717421DE2182A00B94E30 /* LCBORequest.swift */,
 				976470C81DE327E100DF984D /* DataStore.swift */,
+				97BB1DB51DE5EA63002BC520 /* ProductListDataProviderProtocol.swift */,
+				97BB1DB71DE5EC50002BC520 /* Product.swift */,
+				97BB1DB91DE5ED9D002BC520 /* ProductListDataProvider.swift */,
 			);
 			path = LCBOApp;
 			sourceTree = "<group>";
@@ -698,8 +707,11 @@
 			files = (
 				975716A01DE1F7F300B94E30 /* AppDelegate.swift in Sources */,
 				975716A31DE1F7F300B94E30 /* LCBOApp.xcdatamodeld in Sources */,
+				97BB1DBA1DE5ED9D002BC520 /* ProductListDataProvider.swift in Sources */,
 				976470C91DE327E100DF984D /* DataStore.swift in Sources */,
-				975716D31DE1F8D500B94E30 /* Product.swift in Sources */,
+				975716D31DE1F8D500B94E30 /* ProductInfo.swift in Sources */,
+				97BB1DB61DE5EA63002BC520 /* ProductListDataProviderProtocol.swift in Sources */,
+				97BB1DB81DE5EC50002BC520 /* Product.swift in Sources */,
 				975716A51DE1F7F300B94E30 /* LiveViewController.swift in Sources */,
 				975716D71DE2086700B94E30 /* RequestManager.swift in Sources */,
 				975717431DE2182A00B94E30 /* LCBORequest.swift in Sources */,

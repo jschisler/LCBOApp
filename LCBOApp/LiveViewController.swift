@@ -13,7 +13,7 @@ import AlamofireImage
 
 class LiveViewController: UITableViewController {
 
-    var searchResults = [Product]() {
+    var searchResults = [ProductInfo]() {
         didSet {
             tableView.reloadData()
         }
