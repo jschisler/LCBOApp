@@ -29,7 +29,7 @@ class FavoritesViewController: UITableViewController, NSFetchedResultsController
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let object = dataProvider?.productAt(at: indexPath)
                 let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
-                controller.detailItem = ProductInfo.init(entity: object! as ProductEntity)
+                controller.detailItem = ProductInfo.init(entity: object! as Product)
             }
         }
     }

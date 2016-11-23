@@ -13,7 +13,7 @@ public class ProductListDataProvider: NSObject, ProductListDataProviderProtocol 
     public var managedObjectContext: NSManagedObjectContext?
     weak public var tableView: UITableView!
     
-    var _fetchedResultsController: NSFetchedResultsController<ProductEntity>? = nil
+    var _fetchedResultsController: NSFetchedResultsController<Product>? = nil
     
     func configureCell(cell: UITableViewCell, atIndexPath indexPath: NSIndexPath) {
         let product = self.fetchedResultsController.object(at: indexPath as IndexPath)
@@ -40,7 +40,7 @@ public class ProductListDataProvider: NSObject, ProductListDataProviderProtocol 
         tableView.reloadData()
     }
     
-    public func productAt(at: IndexPath) -> ProductEntity {
+    public func productAt(at: IndexPath) -> Product {
         return fetchedResultsController.object(at: at)
     }
 }
@@ -69,12 +69,12 @@ extension ProductListDataProvider: UITableViewDataSource {
 
 extension ProductListDataProvider : NSFetchedResultsControllerDelegate {
     
-    var fetchedResultsController: NSFetchedResultsController<ProductEntity> {
+    var fetchedResultsController: NSFetchedResultsController<Product> {
         if _fetchedResultsController != nil {
             return _fetchedResultsController!
         }
         
-        let fetchRequest: NSFetchRequest<ProductEntity> = ProductEntity.fetchRequest()
+        let fetchRequest: NSFetchRequest<Product> = Product.fetchRequest()
         
         // Set the batch size to a suitable number.
         fetchRequest.fetchBatchSize = 20

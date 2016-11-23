@@ -33,6 +33,7 @@ class LCBOAppTests: XCTestCase {
         //  Then
         XCTAssertTrue(mockDataProvider.tableView != nil, "tablewView should be set at this point")
         XCTAssert(mockDataProvider.tableView == liveViewController?.tableView, "tableView should be set to the tableView of the data source")
+        XCTAssertTrue(liveViewController?.tableView?.dataSource != nil, "tableView data source should be set")
     }
     
     override func tearDown() {

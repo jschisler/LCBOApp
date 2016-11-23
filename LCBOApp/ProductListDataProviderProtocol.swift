@@ -14,5 +14,5 @@ public protocol ProductListDataProviderProtocol : UITableViewDataSource {
     weak var tableView: UITableView! { get set }
     
     func fetch()
-    func productAt(at: IndexPath) -> ProductEntity
+    func productAt(at: IndexPath) -> Product
 }

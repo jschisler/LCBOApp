@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 public struct ProductInfo {
 
@@ -106,7 +107,7 @@ public struct ProductInfo {
         self.isFavorite = isFavorite
     }
     
-    init(entity: ProductEntity)
+    init(entity: Product)
     {
         id = entity.id!
         name = entity.name!

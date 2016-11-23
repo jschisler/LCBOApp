@@ -29,7 +29,6 @@
 		976470C91DE327E100DF984D /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976470C81DE327E100DF984D /* DataStore.swift */; };
 		9764710A1DE3331500DF984D /* lcbo.png in Resources */ = {isa = PBXBuildFile; fileRef = 976471091DE3331500DF984D /* lcbo.png */; };
 		97BB1DB61DE5EA63002BC520 /* ProductListDataProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BB1DB51DE5EA63002BC520 /* ProductListDataProviderProtocol.swift */; };
-		97BB1DB81DE5EC50002BC520 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BB1DB71DE5EC50002BC520 /* Product.swift */; };
 		97BB1DBA1DE5ED9D002BC520 /* ProductListDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BB1DB91DE5ED9D002BC520 /* ProductListDataProvider.swift */; };
 /* End PBXBuildFile section */
 
@@ -260,7 +259,6 @@
 		976470C81DE327E100DF984D /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		976471091DE3331500DF984D /* lcbo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lcbo.png; sourceTree = "<group>"; };
 		97BB1DB51DE5EA63002BC520 /* ProductListDataProviderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductListDataProviderProtocol.swift; sourceTree = "<group>"; };
-		97BB1DB71DE5EC50002BC520 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		97BB1DB91DE5ED9D002BC520 /* ProductListDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductListDataProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -318,6 +316,7 @@
 		9757169E1DE1F7F300B94E30 /* LCBOApp */ = {
 			isa = PBXGroup;
 			children = (
+				97BB1DC11DE649A0002BC520 /* Model */,
 				976471091DE3331500DF984D /* lcbo.png */,
 				975716D61DE2086700B94E30 /* RequestManager.swift */,
 				9757169F1DE1F7F300B94E30 /* AppDelegate.swift */,
@@ -328,12 +327,10 @@
 				975716AD1DE1F7F300B94E30 /* LaunchScreen.storyboard */,
 				975716B01DE1F7F300B94E30 /* Info.plist */,
 				975716A11DE1F7F300B94E30 /* LCBOApp.xcdatamodeld */,
-				975716D21DE1F8D500B94E30 /* ProductInfo.swift */,
 				975716D41DE2042300B94E30 /* FavoritesViewController.swift */,
 				975717421DE2182A00B94E30 /* LCBORequest.swift */,
 				976470C81DE327E100DF984D /* DataStore.swift */,
 				97BB1DB51DE5EA63002BC520 /* ProductListDataProviderProtocol.swift */,
-				97BB1DB71DE5EC50002BC520 /* Product.swift */,
 				97BB1DB91DE5ED9D002BC520 /* ProductListDataProvider.swift */,
 			);
 			path = LCBOApp;
@@ -397,6 +394,14 @@
 				975717761DE22C8500B94E30 /* AlamofireImage.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		97BB1DC11DE649A0002BC520 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				975716D21DE1F8D500B94E30 /* ProductInfo.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -711,7 +716,6 @@
 				976470C91DE327E100DF984D /* DataStore.swift in Sources */,
 				975716D31DE1F8D500B94E30 /* ProductInfo.swift in Sources */,
 				97BB1DB61DE5EA63002BC520 /* ProductListDataProviderProtocol.swift in Sources */,
-				97BB1DB81DE5EC50002BC520 /* Product.swift in Sources */,
 				975716A51DE1F7F300B94E30 /* LiveViewController.swift in Sources */,
 				975716D71DE2086700B94E30 /* RequestManager.swift in Sources */,
 				975717431DE2182A00B94E30 /* LCBORequest.swift in Sources */,

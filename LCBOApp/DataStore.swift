@@ -64,7 +64,7 @@ class DataStore
     
     func insertProduct(product: ProductInfo) {
         let context = persistentContainer.viewContext
-        let newProduct = ProductEntity(context: context)
+        let newProduct = Product(context: context)
         
         // If appropriate, configure the new managed object.
         newProduct.id = product.id
@@ -101,7 +101,7 @@ class DataStore
         }
     }
     
-    func findProduct(id: String) -> ProductEntity? {
+    func findProduct(id: String) -> Product? {
         let context = persistentContainer.viewContext
         
         do {
@@ -109,14 +109,14 @@ class DataStore
             let fetchRequest = NSFetchRequest<NSFetchRequestResult>()
             
             // Create Entity Description
-            let entityDescription = NSEntityDescription.entity(forEntityName: "ProductEntity", in: context)
+            let entityDescription = NSEntityDescription.entity(forEntityName: "Product", in: context)
             
             // Configure Fetch Request
             fetchRequest.entity = entityDescription
             fetchRequest.fetchLimit = 1
             fetchRequest.predicate = NSPredicate(format: "id == %@", id)
-            var objects: [ProductEntity]
-            try objects = context.fetch(fetchRequest) as! [ProductEntity]
+            var objects: [Product]
+            try objects = context.fetch(fetchRequest) as! [Product]
             
             return objects.count == 0 ? nil : objects[0]
         } catch {
