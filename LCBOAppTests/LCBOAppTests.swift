@@ -26,7 +26,7 @@ class LCBOAppTests: XCTestCase {
         liveViewController?.dataProvider = mockDataProvider
         
         //  When
-        XCTAssertNil(mockDataProvider.tableView, "Before loading the tableview should be nil")
+        XCTAssertNil(mockDataProvider.tableView, "tableview should be nil at this point")
         
         let _ = liveViewController?.view
       
@@ -50,8 +50,8 @@ class MockDataProvider : NSObject, ProductListDataProviderProtocol {
     
     func fetch() {
     }
-    func productAt(at: IndexPath) -> ProductEntity {
-        return ProductEntity()
+    func productAt(at: IndexPath) -> Product {
+        return Product()
     }
     
     public func numberOfSections(in tableView: UITableView) -> Int {

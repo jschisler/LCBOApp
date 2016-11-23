@@ -158,9 +158,7 @@
                             <outlet property="delegate" destination="Km3-yl-lNw" id="bfK-LY-XqL"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Zdf-7t-Un8">
-                        <nil key="title"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="LCBO Live Search" id="Zdf-7t-Un8"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Ug-Fk-Re7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -248,7 +246,7 @@
                             <outlet property="delegate" destination="E3F-tT-Jyy" id="PSh-Ez-Lj7"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Y3j-Gz-MQ6"/>
+                    <navigationItem key="navigationItem" title="LCBO Favorites" id="Y3j-Gz-MQ6"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="51t-7P-xTn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
