@@ -43,6 +43,10 @@ public class ProductListDataProvider: NSObject, ProductListDataProviderProtocol 
         }
         tableView.reloadData()
     }
+    
+    public func productAt(at: IndexPath) -> ProductEntity {
+        return fetchedResultsController.object(at: at)
+    }
 }
 
 extension ProductListDataProvider: UITableViewDataSource {
@@ -81,7 +85,7 @@ extension ProductListDataProvider : NSFetchedResultsControllerDelegate {
         
         // Edit the sort key as appropriate.
         let sortDescriptor = NSSortDescriptor(key: "name", ascending: false)
-        
+
         fetchRequest.sortDescriptors = [sortDescriptor]
         
         // Edit the section name key path and cache name if appropriate.

@@ -17,6 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let navigationController = self.window?.rootViewController as! UITabBarController
+        let controller = navigationController.viewControllers?[1].childViewControllers[0] as! FavoritesViewController
+        let dataProvider = ProductListDataProvider()
+        dataProvider.managedObjectContext = DataStore.sharedInstance.viewContext
+        controller.dataProvider = dataProvider
         return true
     }
 

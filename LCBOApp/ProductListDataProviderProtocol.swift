@@ -15,4 +15,5 @@ public protocol ProductListDataProviderProtocol : UITableViewDataSource {
     
     func addProduct(productInfo: ProductInfo)
     func fetch()
+    func productAt(at: IndexPath) -> ProductEntity
 }
