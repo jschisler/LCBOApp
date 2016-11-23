@@ -15,10 +15,6 @@ public class ProductListDataProvider: NSObject, ProductListDataProviderProtocol 
     
     var _fetchedResultsController: NSFetchedResultsController<ProductEntity>? = nil
     
-    public func addProduct(productInfo: ProductInfo) {
-        
-    }
-    
     func configureCell(cell: UITableViewCell, atIndexPath indexPath: NSIndexPath) {
         let product = self.fetchedResultsController.object(at: indexPath as IndexPath)
         

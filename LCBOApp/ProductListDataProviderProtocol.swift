@@ -13,7 +13,6 @@ public protocol ProductListDataProviderProtocol : UITableViewDataSource {
     var managedObjectContext: NSManagedObjectContext? { get set }
     weak var tableView: UITableView! { get set }
     
-    func addProduct(productInfo: ProductInfo)
     func fetch()
     func productAt(at: IndexPath) -> ProductEntity
 }
