@@ -205,7 +205,7 @@
         <!--Favorites-->
         <scene sceneID="ro0-ug-uf2">
             <objects>
-                <tableViewController title="Favorites" id="E3F-tT-Jyy" customClass="FavoritesViewController" customModule="LCBOApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="FavoritesViewController" title="Favorites" id="E3F-tT-Jyy" customClass="FavoritesViewController" customModule="LCBOApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="3jJ-Aa-IhJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
